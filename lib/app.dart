@@ -13,41 +13,54 @@ class TaskManagerApp extends StatelessWidget {
       // darkTheme:_darkThemeData() ,
       themeMode: ThemeMode.system,
     );
-
   }
-  ThemeData _lightThemeData(){
+
+  ThemeData _lightThemeData() {
     return ThemeData(
-      inputDecorationTheme:InputDecorationTheme(
-        fillColor: Colors.white,
-        filled: true,
-        hintStyle: TextStyle(
-          color: Colors.grey,
-        ),
-        border: OutlineInputBorder(
-          borderSide: BorderSide.none,
-        )
-      ),
+      inputDecorationTheme: InputDecorationTheme(
+          fillColor: Colors.white,
+          filled: true,
+          hintStyle: TextStyle(
+            color: Colors.grey,
+          ),
+          border: OutlineInputBorder(
+            borderSide: BorderSide.none,
+          )),
       textTheme: TextTheme(
         titleLarge: TextStyle(
           fontSize: 24,
           fontWeight: FontWeight.bold,
           color: Colors.black,
-        )
+        ),
+        titleSmall: TextStyle(
+          fontSize: 14,
+          fontWeight: FontWeight.w400,
+          color: Colors.grey,
+          letterSpacing: .4,
+        ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.primaryColor,
-        foregroundColor: Colors.white,
-        padding: EdgeInsets.symmetric(horizontal: 12,vertical: 14),
-        fixedSize: Size.fromWidth(double.maxFinite),
+          backgroundColor: AppColors.primaryColor,
+          foregroundColor: Colors.white,
+          padding: EdgeInsets.symmetric(horizontal: 12, vertical: 14),
+          fixedSize: Size.fromWidth(double.maxFinite),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
           ),
         ),
       ),
+      textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(
+          foregroundColor: Colors.grey,
+          textStyle: TextStyle(
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
     );
   }
-  // ThemeData _darkThemeData(){
-  //
-  // }
+// ThemeData _darkThemeData(){
+//
+// }
 }

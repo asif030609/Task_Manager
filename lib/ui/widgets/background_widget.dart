@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../gen/assets.gen.dart';
 import '../utility/asset_paths.dart';
 
 class BackgroundWidget extends StatelessWidget {
@@ -12,7 +13,7 @@ class BackgroundWidget extends StatelessWidget {
       body: Stack(
         children: [
           SvgPicture.asset(
-            AssetPaths.backgroundSvg,
+            Assets.images.background,
             height: double.maxFinite,
             width: double.maxFinite,
             fit: BoxFit.cover,
@@ -20,6 +21,6 @@ class BackgroundWidget extends StatelessWidget {
           child,
         ],
       ),
-    );;
+    );
   }
 }

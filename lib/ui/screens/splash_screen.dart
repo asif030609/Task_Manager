@@ -1,10 +1,10 @@
-import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:task_manager/ui/screens/signin_screen.dart';
-import 'package:task_manager/ui/utility/asset_paths.dart';
 import 'package:task_manager/ui/widgets/background_widget.dart';
+
+import '../../gen/assets.gen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -17,8 +17,9 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState() {
-    super.initState();
     _MoveToNextScreen();
+    super.initState();
+
   }
 
   Future<void> _MoveToNextScreen() async {
@@ -37,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
       body: BackgroundWidget(
         child: Center(
           child: SvgPicture.asset(
-            AssetPaths.appLogo,
+            Assets.images.logo,
             width: 140,
           ),
         ),
