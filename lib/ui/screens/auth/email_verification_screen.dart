@@ -1,11 +1,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:task_manager/ui/screens/signin_screen.dart';
-import 'package:task_manager/ui/screens/signup_screen.dart';
+import 'package:task_manager/ui/screens/auth/pin_verification_screen.dart';
+import 'package:task_manager/ui/screens/auth/signin_screen.dart';
 import 'package:task_manager/ui/utility/app_colors.dart';
 import 'package:task_manager/ui/widgets/background_widget.dart';
 
-import 'pin_verification_screen.dart';
 
 class EmailVerificationScreen extends StatefulWidget {
   const EmailVerificationScreen({super.key});

@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:task_manager/ui/screens/signup_screen.dart';
+import 'package:task_manager/ui/screens/auth/signup_screen.dart';
+import 'package:task_manager/ui/screens/main_bottom_nav_screen.dart';
 import 'package:task_manager/ui/utility/app_colors.dart';
 import 'package:task_manager/ui/widgets/background_widget.dart';
 
@@ -54,7 +55,9 @@ class _SignInScreenState extends State<SignInScreen> {
               height: 16,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                _onTapNextButton();
+              },
               child: Icon(
                 Icons.arrow_circle_right_outlined,
                 color: Colors.white,
@@ -81,33 +84,32 @@ class _SignInScreenState extends State<SignInScreen> {
 
   Widget _buildSignInSection() {
     return Center(
-            child: RichText(
-              text: TextSpan(
-                style: TextStyle(
-                  color: Colors.black.withOpacity(.8),
-                  fontWeight: FontWeight.w600,
-                  letterSpacing: .4,
-                ),
-                text: 'Don\'t you have account?',
-                children: [
-                  TextSpan(
-                    text: ' SignUp',
-                    style: TextStyle(
-                      color: AppColors.primaryColor,
-                    ),
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = () {
-                       _onTapSignUpButton();
-
-
-                      },
-                  ),
-                ],
+      child: RichText(
+        text: TextSpan(
+          style: TextStyle(
+            color: Colors.black.withOpacity(.8),
+            fontWeight: FontWeight.w600,
+            letterSpacing: .4,
+          ),
+          text: 'Don\'t you have account?',
+          children: [
+            TextSpan(
+              text: ' SignUp',
+              style: TextStyle(
+                color: AppColors.primaryColor,
               ),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () {
+                  _onTapSignUpButton();
+                },
             ),
-          );
+          ],
+        ),
+      ),
+    );
   }
-  void _onTapSignUpButton(){
+
+  void _onTapSignUpButton() {
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -115,7 +117,8 @@ class _SignInScreenState extends State<SignInScreen> {
       ),
     );
   }
-  void _onTapForgetPassword(){
+
+  void _onTapForgetPassword() {
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -123,6 +126,16 @@ class _SignInScreenState extends State<SignInScreen> {
       ),
     );
   }
+
+  void _onTapNextButton() {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (context) => MainBottomNavScreen(),
+      ),
+    );
+  }
+
   @override
   void dispose() {
     _emailTEController.dispose();
