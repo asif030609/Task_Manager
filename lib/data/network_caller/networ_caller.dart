@@ -35,11 +35,11 @@ class NetWorkCaller {
           body: jsonEncode(body),
           headers: {'content-type': 'Application/json'});
       if (response.statusCode == 200 || response.statusCode==201) {
-        final decodedData = jsonDecode(response.body);
+        final encodedData = jsonEncode(response.body);
         return NetworkResponse(
           statusCode: response.statusCode,
           isSuccess: true,
-          responseData: decodedData,
+          responseData: encodedData,
         );
       } else {
         return NetworkResponse(
